@@ -14,31 +14,39 @@
 
 <!-- NAVBAR -->
 <header class="navbar">
-  <div class="logo">
-    <svg class="logo" width="110" height="110" viewBox="0 0 100 100"
-         xmlns:xlink="http://www.w3.org/1999/xlink">
+  <a href="#home" class="logo-wrapper">
+  <svg class="logo-svg" width="110" height="110" viewBox="0 0 100 100"
+       xmlns="http://www.w3.org/2000/svg">
 
-        <circle cx="50" cy="50" r="45"
-                stroke="#1a73e8"
-                stroke-width="3"
-                fill="none"/>
+    <!-- Neon glow circle (NO visible border) -->
+    <circle cx="50" cy="50" r="45"
+            fill="none"
+            class="logo-glow"/>
 
-        <image href="hsmlogo.webp"
-               xlink:href="hsmlogo.webp"
-               x="10" y="10"
-               width="80" height="80"
-               clip-path="circle(40px at 40px 40px)"/>
-    </svg>
+    <!-- Logo image clipped in circle -->
+    <defs>
+      <clipPath id="logoClip">
+        <circle cx="50" cy="50" r="40"/>
+      </clipPath>
+    </defs>
 
+    <image href="hsmlogo.webp"
+           x="10" y="10"
+           width="80" height="80"
+           clip-path="url(#logoClip)"/>
+  </svg>
+</a>
 
-  </div>
   <nav>
     <a href="#home">Home</a>
     <a href="#about">About</a>
     <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
   </nav>
-  <button class="cta">Let’s Talk</button>
+  <a href="contact.html" class="btn btn-primary">
+  Let’s Talk
+</a>
+
 </header>
 
 <!-- NEON BACKGROUND -->
@@ -59,6 +67,7 @@
 <!-- HERO -->
 <section id="home" class="hero">
   <h1>HIMANSHU<br>MOHANTY</h1>
+  <br><br>
   <p class="subtitle">CREATIVE DEVELOPER & DESIGNER</p>
   <span class="meta">EST. 2024 — [ PORTFOLIO ]</span>
 </section>
@@ -66,7 +75,7 @@
 <!-- ABOUT -->
 <section id="about" class="about">
   <div class="about-left">
-    <span class="section-tag">01 INTRODUCTION</span>
+    <span class="section-tag">01.  INTRODUCTION</span>
     <h2>The Curator</h2>
     <div class="line"></div>
     <p class="muted">
@@ -120,26 +129,56 @@
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="contact">
+<section id="contact" class="contact-section">
+
+  <!-- LEFT SIDE -->
   <div class="contact-left">
     <h2>Get in<br>Touch</h2>
-    <p>Open for collaborations, commissions, and discourse on digital culture.</p>
+
+    <p>
+    <pre>   Open for collaborations commissions, and discourse on digital culture.
+    Reach out via LinkedIn or GitHub for inquiries or just to say hello.
+    </pre>
+    </p>
 
     <div class="socials">
-      <a href="https://www.linkedin.com/in/himanshu-somprakash-mohanty-4a0810158/" target="_blank">LinkedIn</a>
-      <a href="https://github.com/vortexxyynubb" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/himanshu-somprakash-mohanty-4a0810158/" target="_blank">
+        LinkedIn
+      </a>
+      <a href="https://github.com/vortexxyynubb" target="_blank">
+        GitHub
+      </a>
     </div>
   </div>
 
+  <!-- RIGHT SIDE -->
   <div class="contact-right">
-    <div class="availability">
-      <div class="icon">🌍</div>
-      <h4>Global Availability</h4>
-      <p>Based in India<br>Working Worldwide</p>
-      <span>[ LAT: 20.5937° N / LONG: 78.9629°  ]</span>
+    <div class="availability-card">
+
+      <div class="availability-icon">
+        <svg width="64" height="64" viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="12" r="9" />
+          <ellipse cx="12" cy="12" rx="4" ry="9" />
+          <line x1="3" y1="12" x2="21" y2="12" />
+        </svg>
+      </div>
+
+      <h3>Global Availability</h3>
+
+      <p class="availability-sub">
+        Based in India<br>
+        Working Worldwide
+      </p>
+
+      <p class="coords">
+        [ LAT: 20.5937° N / LONG: 78.9629° E ]
+      </p>
+
     </div>
   </div>
+
 </section>
+
 
 <!-- FOOTER -->
 <footer>
@@ -155,4 +194,3 @@
 <script src="script.js"></script>
 </body>
 </html>
-
