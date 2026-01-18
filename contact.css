@@ -1,0 +1,170 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* GLOBAL NEON BACKGROUND */
+body {
+  min-height: 100vh;
+  font-family: "Inter", Arial, sans-serif;
+  background:
+    radial-gradient(circle at top, rgba(0, 246, 255, 0.18), #02030a 65%),
+    linear-gradient(180deg, #02030a, #000);
+  color: #eaffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* ANIMATED GRID (SAME AS MAIN SITE) */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    linear-gradient(transparent 95%, rgba(0,255,255,0.15) 100%),
+    linear-gradient(90deg, transparent 95%, rgba(0,255,255,0.15) 100%);
+  background-size: 40px 40px;
+  animation: gridMove 20s linear infinite;
+  z-index: -1;
+}
+
+@keyframes gridMove {
+  from { transform: translateY(0); }
+  to { transform: translateY(40px); }
+}
+
+/* CONTACT CARD (GLASSMORPHISM) */
+.contact-box {
+  width: 420px;
+  padding: 32px;
+  border-radius: 12px;
+
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(16px);
+
+  border: 1px solid rgba(0, 246, 255, 0.35);
+  box-shadow:
+    0 0 30px rgba(0, 246, 255, 0.25);
+
+  animation: fadeUp 1s ease forwards;
+}
+
+/* ENTRY ANIMATION */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* HEADING */
+h1 {
+  text-align: center;
+  margin-bottom: 24px;
+  letter-spacing: 1px;
+
+  color: #eaffff;
+  text-shadow:
+    0 0 10px #00f6ff,
+    0 0 20px rgba(0, 246, 255, 0.6);
+}
+
+/* LABELS */
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: #bffcff;
+}
+
+/* INPUTS */
+input,
+textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 18px;
+
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(0, 246, 255, 0.3);
+  border-radius: 6px;
+
+  color: #eaffff;
+  font-size: 14px;
+
+  outline: none;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #7fdfe5;
+}
+
+/* INPUT FOCUS */
+input:focus,
+textarea:focus {
+  border-color: #00f6ff;
+  box-shadow: 0 0 12px rgba(0, 246, 255, 0.6);
+}
+
+/* BUTTON – MATCHES MAIN SITE */
+button {
+  width: 100%;
+  padding: 14px;
+  margin-top: 8px;
+
+  background: rgba(0, 246, 255, 0.12);
+  color: #eaffff;
+
+  border: 1px solid rgba(0, 246, 255, 0.4);
+  border-radius: 8px;
+
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  background: rgba(0, 246, 255, 0.2);
+  box-shadow: 0 8px 25px rgba(0, 246, 255, 0.35);
+}
+
+/* TEXT */
+p {
+  margin-top: 12px;
+  text-align: center;
+  font-size: 14px;
+  color: #bffcff;
+}
+
+p span {
+  color: #00f6ff;
+}
+
+/* BACK LINK */
+.back a {
+  display: inline-block;
+  margin-top: 16px;
+  color: #00f6ff;
+  text-decoration: none;
+  transition: transform 0.25s ease, text-shadow 0.25s ease;
+}
+
+.back a:hover {
+  transform: translateX(-4px);
+  text-shadow: 0 0 10px #00f6ff;
+}
